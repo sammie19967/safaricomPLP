@@ -69,3 +69,75 @@ Discuss the concept of "forking" a repository on GitHub. How does forking differ
 Examine the importance of issues and project boards on GitHub. How can they be used to track bugs, manage tasks, and improve project organization? Provide examples of how these tools can enhance collaborative efforts.
 
 Reflect on common challenges and best practices associated with using GitHub for version control. What are some common pitfalls new users might encounter, and what strategies can be employed to overcome them and ensure smooth collaboration?
+
+
+
+
+se-Day 3 - Environment Setup Assignment (with Answers)
+Dart & Flutter
+Question 1: What is the first step for installing Dart on a Windows machine?
+
+Answer:  (B) Download the Dart SDK
+
+Question 2: Which command verifies the Dart installation on macOS?
+
+Answer:  (D) dart --version
+
+Question 3: What is the next step after downloading and extracting the Flutter SDK on Linux?
+
+Answer:  (B) Update your PATH
+
+Question 4: What command is used to run a newly created Flutter app?
+
+Answer:  (C) flutter run
+
+Python Installation
+Question 1: What is the first step to install Python on a Windows system?
+
+Answer:  (B) Download Python from the official website
+
+Question 2: Which option should you ensure is checked during Python installation on Windows?
+
+Answer:  (C) Add Python to PATH
+
+Question 3: How do you verify Python installation on any system?
+
+Answer:  (A) By running python --version
+
+Question 4: What command is used to install pip on macOS and Linux?
+
+Answer:  (C) curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py
+
+Question 5: What is the purpose of a virtual environment in Python?
+
+Answer:  (C) To separate project dependencies and avoid conflicts
+
+MySQL Installation
+Question 1: What is the first step to install MySQL on Windows?
+
+Answer:  (B) Download MySQL Installer from the official website
+
+Question 2: What setup type should you choose for a custom MySQL installation?
+
+Answer:  (D) Custom
+
+Question 3: Which products should you select during the MySQL installation?
+
+Answer:  (B) Only MySQL Server (for development purposes)
+
+Question 4: What is the purpose of setting a root password during MySQL installation?
+
+Answer:  (B) To secure your MySQL installation with a super-secret password
+
+Question 5: How do you begin managing your database after installing MySQL?
+
+Answer:  (B) Launch MySQL Workbench and connect to your MySQL Server
+
+
+
+
+
+
+
+
+
