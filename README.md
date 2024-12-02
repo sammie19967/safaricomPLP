@@ -1,1 +1,1 @@
-Enterpreneurship assignments
+All Enterpreneurship assignments
