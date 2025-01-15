@@ -1,0 +1,25 @@
+.file-uploader {
+  margin: 20px;
+  text-align: center;
+}
+
+.file-uploader input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.dashboard-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.chart {
+  width: 80%;
+  margin: 20px auto;
+}
