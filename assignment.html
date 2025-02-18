@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #shopping-cart {
+            margin-top: 20px;
+        }
+        input, select, button {
+            margin: 5px;
+            padding: 8px;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Assignment</h1>
+    <p>Learning JavaScript is fun!</p>
+    <div id="dynamic-content"></div>
+
+    <h2>Welcome to Our Store</h2>
+    <p id="greeting"></p>
+    <p id="discount-message"></p>
+
+    <h2>Shopping Cart</h2>
+    <label for="item">Select Item:</label>
+    <select id="item">
+        <option value="Shoes" data-price="2000">Shoes - Ksh 2000</option>
+        <option value="Laptop" data-price="80000">Laptop - Ksh 80,000</option>
+        <option value="Phone" data-price="50000">Phone - Ksh 50,000</option>
+    </select>
+    
+    <label for="quantity">Enter Quantity:</label>
+    <input type="number" id="quantity" placeholder="e.g., 2">
+    
+    <button onclick="calculateTotal()">Add to Cart</button>
+    <p id="cart-total"></p>
+    <p id="discount-applied"></p>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
