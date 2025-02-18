@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <style>
+        /* Internal CSS for Part 1 */
+        h1 {
+            font-size: 36px; /* Element Selector */
+        }
+
+        .highlight {
+            background-color: yellow; /* Class Selector */
+        }
+
+        #special-section {
+            border: 2px solid black; /* ID Selector */
+        }
+
+        /* Internal CSS for Part 2 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .important {
+            font-weight: bold;
+        }
+
+        /* External CSS (simulating internal part here) */
+        body {
+            background-color: lightblue;
+        }
+
+        a:hover {
+            color: red; /* Change link color on hover */
+        }
+
+        /* Internal CSS for Part 3 */
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Part 1: CSS Basics - Selectors, Properties, and Values -->
+    <h1>This is a Heading</h1>
+    <p class="highlight">This paragraph has a background color.</p>
+    <div id="special-section">
+        This section has a border.
+    </div>
+
+    <!-- Part 2: Inline, Internal, and External CSS -->
+    <h1>This is a Heading with Internal CSS</h1>
+
+    <p style="color: green;">This paragraph has inline CSS that changes its text color to green.</p>
+
+    <p class="important">This paragraph uses a class to make the text bold.</p>
+
+    <a href="https://example.com">Visit Example Website</a>
+
+    <!-- Part 3: Basic Styling Properties - Card Component -->
+    <div class="card">
+        <h2>Card Title</h2>
+        <p>This is a description inside the card. The text is centered and styled.</p>
+        <button>Click Me</button>
+    </div>
+
+</body>
+</html>
