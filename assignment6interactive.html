@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #slider-container {
+            margin: 20px 0;
+        }
+
+        #text-content {
+            font-size: 16px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            z-index: 1000;
+        }
+
+        .modal.show {
+            display: block;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input,
+        select {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>User Profile Setup</h1>
+
+    <!-- Toggle Dark Mode -->
+    <button onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <!-- Font Size Slider -->
+    <div id="slider-container">
+        <label for="font-slider">Adjust Text Size:</label>
+        <input type="range" id="font-slider" min="14" max="30" value="16" oninput="adjustFontSize(this.value)">
+    </div>
+
+    <p id="text-content">Welcome! Customize your profile settings here.</p>
+
+    <!-- Modal Button -->
+    <button onclick="openModal()">Show Announcement</button>
+
+    <!-- Modal -->
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+    <div id="modal" class="modal">
+        <div class="modal-header">
+            <h3>Special Announcement</h3>
+            <button onclick="closeModal()">X</button>
+        </div>
+        <p>Enjoy 10% off on premium memberships this month!</p>
+    </div>
+
+    <!-- Registration Form -->
+    <h2>Register</h2>
+    <form id="registration-form" onsubmit="return validateForm()">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name">
+        <p class="error" id="name-error"></p>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <p class="error" id="email-error"></p>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <p class="error" id="password-error"></p>
+
+        <label for="membership">Membership Type:</label>
+        <select id="membership" onchange="displayMembershipMessage()">
+            <option value="">Select Membership</option>
+            <option value="basic">Basic - Free</option>
+            <option value="premium">Premium - Ksh 5000</option>
+            <option value="vip">VIP - Ksh 10,000</option>
+        </select>
+        <p id="membership-message"></p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Toggle Dark Mode
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+        // Adjust Font Size
+        function adjustFontSize(size) {
+            document.getElementById("text-content").style.fontSize = size + "px";
+        }
+
+        // Open and Close Modal
+        function openModal() {
+            document.getElementById("modal").classList.add("show");
+            document.getElementById("overlay").classList.add("show");
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.remove("show");
+            document.getElementById("overlay").classList.remove("show");
+        }
+
+        // Form Validation
+        function validateForm() {
+            let isValid = true;
+
+            // Validate Name
+            let nameInput = document.getElementById("name");
+            let nameError = document.getElementById("name-error");
+            if (nameInput.value.trim().length < 3) {
+                nameError.innerText = "Name must be at least 3 characters.";
+                isValid = false;
+            } else {
+                nameError.innerText = "";
+            }
+
+            // Validate Email
+            let emailInput = document.getElementById("email");
+            let emailError = document.getElementById("email-error");
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.innerText = "Enter a valid email address.";
+                isValid = false;
+            } else {
+                emailError.innerText = "";
+            }
+
+            // Validate Password
+            let passwordInput = document.getElementById("password");
+            let passwordError = document.getElementById("password-error");
+            let passwordPattern = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+            if (!passwordPattern.test(passwordInput.value)) {
+                passwordError.innerText = "Password must be 8+ characters with one uppercase and one number.";
+                isValid = false;
+            } else {
+                passwordError.innerText = "";
+            }
+
+            return isValid; // Prevent form submission if invalid
+        }
+
+        // Membership Message
+        function displayMembershipMessage() {
+            let message = "";
+            let membership = document.getElementById("membership").value;
+            switch (membership) {
+                case "basic":
+                    message = "Basic Membership: Free access to limited features.";
+                    break;
+                case "premium":
+                    message = "Premium Membership: Ksh 5000 - Access advanced features.";
+                    break;
+                case "vip":
+                    message = "VIP Membership: Ksh 10,000 - Get all exclusive benefits!";
+                    break;
+                default:
+                    message = "";
+            }
+            document.getElementById("membership-message").innerText = message;
+        }
+    </script>
+
+</body>
+
+</html>
