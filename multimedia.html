@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Webpage</title>
+</head>
+<body>
+
+    <!-- Audio Section -->
+    <section>
+        <h2>Audio Player</h2>
+        <audio controls>
+            <!-- Providing an MP3 source for audio compatibility -->
+            <source src="audio-track.mp3" type="audio/mp3">
+            <!-- Providing an OGG source for audio compatibility -->
+            <source src="audio-track.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <br>
+
+    <!-- Video Section -->
+    <section>
+        <h2>Video Player</h2>
+        <video controls poster="video-poster.jpg">
+            <!-- Providing an MP4 source for video compatibility -->
+            <source src="video.mp4" type="video/mp4">
+            <!-- Providing a WebM source for video compatibility -->
+            <source src="video.webm" type="video/webm">
+            Your browser does not support the video element.
+        </video>
+    </section>
+
+</body>
+</html>

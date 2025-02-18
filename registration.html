@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <h2>User Registration</h2>
+
+    <form action="/submit" method="POST">
+
+        <!-- Full Name -->
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required maxlength="50" placeholder="Enter your full name">
+        <br><br>
+
+        <!-- Email Address -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+        <br><br>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8" placeholder="Enter a password with at least 8 characters">
+        <br><br>
+
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required min="18" placeholder="Enter your age (18 or older)">
+        <br><br>
+
+        <!-- Gender (Group with Fieldset) -->
+        <fieldset>
+            <legend>Gender</legend>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="other">Other</label>
+            <input type="radio" id="other" name="gender" value="Other" required>
+        </fieldset>
+        <br>
+
+        <!-- Terms and Conditions (Group with Fieldset) -->
+        <fieldset>
+            <legend>Agreement</legend>
+            <label for="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                I agree to the <a href="/terms">Terms and Conditions</a>
+            </label>
+        </fieldset>
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+</html>
